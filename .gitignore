@@ -1,0 +1,6 @@
+client/node_modules/
+client/dist/
+api/database/*.sqlite
+api/database/*.sqlite-shm
+api/database/*.sqlite-wal
+.env

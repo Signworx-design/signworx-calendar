@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #050505;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #050505;
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  border-radius: 0;
+}
+
+.calendar-wrap .fc {
+  color: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar-wrap .fc-toolbar {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calendar-wrap .fc-toolbar-title {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.calendar-wrap .fc-button {
+  background: #101010 !important;
+  border: 1px solid #2b2b2e !important;
+  border-radius: 0 !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+}
+
+.calendar-wrap .fc-button-active,
+.calendar-wrap .fc-button:hover {
+  background: #c5161d !important;
+  border-color: #c5161d !important;
+}
+
+.calendar-wrap .fc-theme-standard td,
+.calendar-wrap .fc-theme-standard th,
+.calendar-wrap .fc-scrollgrid {
+  border-color: #2b2b2e !important;
+}
+
+.calendar-wrap .fc-col-header-cell,
+.calendar-wrap .fc-daygrid-day,
+.calendar-wrap .fc-timegrid-slot,
+.calendar-wrap .fc-list-day-cushion,
+.calendar-wrap .fc-list-event td {
+  background: #080808 !important;
+}
+
+.calendar-wrap .fc-day-today {
+  background: rgba(197, 22, 29, 0.16) !important;
+}
+
+.calendar-wrap .fc-daygrid-day-number,
+.calendar-wrap .fc-col-header-cell-cushion,
+.calendar-wrap .fc-list-day-text,
+.calendar-wrap .fc-list-day-side-text {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.calendar-wrap .fc-event {
+  border: 1px solid #2b2b2e;
+  border-radius: 0;
+  background: #18181b;
+  color: #fff;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+
+.calendar-wrap .fc-event.status-in_progress,
+.calendar-wrap .fc-event.priority-urgent {
+  border-color: #c5161d;
+  background: #8f0f14;
+}
+
+.calendar-wrap .fc-event.status-completed {
+  border-color: #047857;
+  background: #052e24;
+}
+
+.calendar-wrap .fc-event.status-needs_attention {
+  border-color: #d97706;
+  background: #3b2303;
+}
+
+.calendar-wrap .fc-list {
+  border-color: #2b2b2e;
+}
+
+@media (max-width: 760px) {
+  .calendar-wrap .fc-header-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .calendar-wrap .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+
+  .calendar-wrap .fc-toolbar-title {
+    text-align: center;
+  }
+}
