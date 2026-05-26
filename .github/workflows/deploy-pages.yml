@@ -43,10 +43,16 @@ jobs:
       - name: Add SPA fallback
         run: cp client/dist/index.html client/dist/404.html
 
+      - name: Package Pages artifact
+        run: tar --dereference --hard-dereference --directory client/dist -cvf "$RUNNER_TEMP/artifact.tar" .
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-artifact@v4
         with:
-          path: client/dist
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          if-no-files-found: error
+          retention-days: 1
 
   deploy:
     environment:
