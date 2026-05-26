@@ -7,7 +7,7 @@ ini_set('log_errors', '1');
 function cors(): void
 {
     $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-    if (in_array($origin, ['http://127.0.0.1:5173', 'http://localhost:5173'], true)) {
+    if (preg_match('/^http:\/\/(127\.0\.0\.1|localhost):\d+$/', $origin)) {
         header('Access-Control-Allow-Origin: ' . $origin);
         header('Vary: Origin');
     } else {
