@@ -2,14 +2,14 @@
   "name": "Signworx Calendar",
   "short_name": "SW Calendar",
   "description": "Private Signworx internal operations calendar",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#c5161d",
   "icons": [
     {
-      "src": "/icons/icon.svg",
+      "src": "icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
