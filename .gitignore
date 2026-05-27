@@ -4,3 +4,5 @@ api/database/*.sqlite
 api/database/*.sqlite-shm
 api/database/*.sqlite-wal
 .env
+.env.local
+client/.env.local

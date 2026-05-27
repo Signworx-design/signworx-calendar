@@ -39,7 +39,7 @@ export default function CalendarView() {
       setEvents(await listEvents());
     } catch (error) {
       console.error('Could not load events', error);
-      setLoadError(error.message || 'Could not load events from the PHP API.');
+      setLoadError(error.message || 'Could not load events.');
     }
   }
 
@@ -98,7 +98,7 @@ export default function CalendarView() {
       await load();
     } catch (error) {
       console.error('Could not save dragged event', error);
-      alert(error.message || 'Could not save event. Check that the PHP API is running.');
+      alert(error.message || 'Could not save event.');
       info.revert();
     }
   }

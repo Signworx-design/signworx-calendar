@@ -1,22 +1,18 @@
-import { apiRequest, clearStoredSession, setStoredSession } from './apiClient';
+import { clearStoredSession, setStoredSession } from './apiClient';
 
 export async function unlock(password) {
-  const data = await apiRequest('unlock.php', {
-    method: 'POST',
-    body: JSON.stringify({ password }),
-  });
+  const data = {
+    token: password || 'local-session',
+    expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30).toISOString(),
+  };
   setStoredSession(data.token, data.expiresAt);
   return data;
 }
 
 export async function verifySession() {
-  return apiRequest('verify-session.php');
+  return { success: true };
 }
 
 export async function logoutSession() {
-  try {
-    await apiRequest('logout.php', { method: 'POST' });
-  } finally {
-    clearStoredSession();
-  }
+  clearStoredSession();
 }

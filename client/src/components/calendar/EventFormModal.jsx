@@ -49,7 +49,7 @@ export default function EventFormModal({ open, event, onClose, onSave, startDate
       await onSave(form);
     } catch (error) {
       console.error('Could not save event', error);
-      setSaveError(error.message || 'Could not save event. Check that the PHP API is running.');
+      setSaveError(error.message || 'Could not save event.');
     } finally {
       setSaving(false);
     }
@@ -78,7 +78,7 @@ export default function EventFormModal({ open, event, onClose, onSave, startDate
         <Textarea label="Notes" value={form.notes || ''} onChange={(e) => update('notes', e.target.value)} />
         {saveError && (
           <div className="border border-signred bg-black p-3 text-sm text-red-200">
-            Could not save event. Check that the PHP API is running.
+            Could not save event.
             <div className="mt-1 text-xs text-red-300">{saveError}</div>
           </div>
         )}

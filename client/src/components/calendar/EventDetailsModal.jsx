@@ -45,7 +45,7 @@ export default function EventDetailsModal({ open, event, onClose, onEdit, onDele
       window.dispatchEvent(new CustomEvent('events:changed'));
     } catch (error) {
       console.error('Could not save comment', error);
-      setCommentError(error.message || 'Could not save comment. Check that the PHP API is running.');
+      setCommentError(error.message || 'Could not save comment.');
     }
   }
 
